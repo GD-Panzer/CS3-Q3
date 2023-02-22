@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			img {
+				margin-left: 30%;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="pic1()">Pic 1</button>
+		<button onclick="pic2()">Pic 2</button>
+		<br>
+		<img id="picBox" src="pic/Heisenberg.png" width="500px" height="500px">
+		<script>
+			function pic1(){
+				document.getElementById("picBox").src = "pic/Heisenberg.png";
+			}
+			function pic2(){
+				document.getElementById("picBox").src = "pic/pekora.jpg";
+			}
+		</script>
+	</body>
+</html>
