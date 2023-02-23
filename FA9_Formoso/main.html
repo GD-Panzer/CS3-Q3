@@ -3,9 +3,13 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Redirect</title>
-		<script>
-				var _alert = window.alert("You will be redirected to a webpage");
-				window.open("sub.html");
-		</script>
 	</head>
+	<body onload="redirect()">
+		<script>
+		function redirect() {
+					window.alert("You will be redirected to a webpage");
+					window.open("sub.html");
+				}
+		</script>
+	</body>
 </html>
