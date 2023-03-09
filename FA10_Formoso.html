@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script>
+			var randNum = Math.floor(Math.random()*1000);
+			var stringNum = randNum.toString();
+			
+			document.write("Randomly Generated Number: " + stringNum + "<br>");
+			console.log(stringNum);
+			
+			if (stringNum.length == 3){
+				ones = stringNum.charAt(2);
+				tens = stringNum.charAt(1)*10;
+				hundreds = stringNum.charAt(0)*100;
+				console.log(ones);
+				console.log(tens);
+				console.log(hundreds);
+				document.write("breakdown: " + hundreds + ", " + tens + ", " + ones);
+			} else if (stringNum.length == 2){
+				ones = stringNum.charAt(1);
+				tens = stringNum.charAt(0)*10;
+				hundreds = 0;
+				console.log(ones);
+				console.log(tens);
+				console.log(hundreds);
+				document.write("breakdown: " + hundreds + ", " + tens + ", " + ones);
+			} else {
+				ones = stringNum.charAt(0);
+				tens = 0;
+				hundreds = 0;
+				console.log(ones);
+				console.log(tens);
+				console.log(hundreds);
+				document.write("breakdown: " + hundreds + ", " + tens + ", " + ones);
+			}
+		</script>
+	</head>
+</html>
