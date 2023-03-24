@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var otpNum;
+			function rand() {
+				//converts each digit of otp to string, then add it all together to make otp
+				var counter = 0;
+				otpNum = String(Math.floor(Math.random()*10));
+				while(counter != 5){
+					var num = String(Math.floor(Math.random()*10));
+					otpNum = otpNum + num;
+					counter++;
+				}
+				console.log("random OTP Number: " + otpNum);
+				document.getElementById("otpNum").innerHTML = otpNum;
+			}
+			
+			function otpCheck() {
+				//user inputs otp num, then checks if it's the same. if same, then redirect, otherwise, runs function rand() to make new otp
+				var input = prompt("Please Enter the OTP","");
+				console.log("user input: " + input);
+				if(input == otpNum){
+					window.open("https://www.youtube.com/watch?v=broj5j1ImXQ");
+				} else {
+					window.alert("Sorry, that is not the correct otp. Regenerating otp.");
+					rand();
+				}
+			}
+			
+		</script>
+		<style>
+			* {
+				text-align: center;
+			}
+			body {
+				background-color: #b0c4de;
+			}
+			p {
+				margin-top: 100px;
+			}
+		</style>
+	</head>
+	<body onload="rand()">
+		<h1>OTP</h1>
+		<h2 id="otpNum"></h2>
+		<button onclick="otpCheck()">Click for OTP confirmation</button>
+	</body>
+</html>

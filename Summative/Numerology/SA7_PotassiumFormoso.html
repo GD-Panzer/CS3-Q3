@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var name;
+			var lengthName;
+			function nameInput() {
+				//gets the user's name, then converts it to length
+				name = prompt("what is your full name","");
+				lengthName = name.length;
+				console.log(lengthName);
+				document.getElementById("theName").innerHTML = name;
+				processing();
+			}
+			function processing() {
+				
+				console.log(lengthName); 
+				
+				while (lengthName >= 10){
+					//converts the lengthname var to string, then adds the digits of the string together
+					lengthName = lengthName.toString();
+					var a = parseInt(lengthName.charAt(0));
+					var b = parseInt(lengthName.charAt(1));
+					console.log(a);
+					console.log(b);
+					lengthName = a + b;
+					console.log(lengthName);
+				}
+				lengthName = parseInt(lengthName);
+				
+				//the fortune that get reseased to the world
+				switch(lengthName) {
+					case 0:
+						document.getElementById("fortune").innerHTML = "Wala mangayri na masama sa buhay mo";
+						break;
+					case 1:
+						document.getElementById("fortune").innerHTML = "Kayo na in the future";
+						break;
+					case 2:
+						document.getElementById("fortune").innerHTML = "Flat 1 sa cs";
+						break;
+					case 3:
+						document.getElementById("fortune").innerHTML = "Nareject ka ni crush";
+						break;
+					case 4: 
+						document.getElementById("fortune").innerHTML = "ma cold sholder ka niya";
+						break;
+					case 5: 
+						document.getElementById("fortune").innerHTML = "hindi ka maka-move on";
+						break;
+					case 6:
+						document.getElementById("fortune").innerHTML = "Bagsak sa stats";
+						break;
+					case 7: 
+						document.getElementById("fortune").innerHTML = "Minus 5 sa summative test sa cs";
+						break;
+					case 8:
+						document.getElementById("fortune").innerHTML = "hindi ka gakinig sa teacher dahil kadaisip mo sa kanya";
+						break;
+					case 9:
+						document.getElementById("fortune").innerHTML = "ma 1.51 ang GWA mo";
+						break;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Fortune</h1>
+		<h2>Your name is: <span id="theName"></span></h2>
+		<button onclick="nameInput()">Please put your name here</button>
+		<p>your fortune is: <span id="fortune"></span></p>
+	</body>
+</html>

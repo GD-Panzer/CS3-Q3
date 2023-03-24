@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var quantity;
+			var userInput;
+			var totalBill = 0;
+			
+			function clearAll() {
+				//resets the recipt tag
+				document.getElementById("recipt").innerHTML = " ";
+				//resets all units
+				quantity = 0;
+				userInput = NaN;
+				totalBill = 0;
+			}
+			
+			function buy() {
+				userInput = prompt("Choose 1 for steel, 2 for components, and 3 for slaves", "");
+				//checks if userInput is one of the values, if not, it reruns buy function 
+				if (userInput == 1 || userInput == 2 || userInput == 3) {
+					quantity = parseInt(prompt("how much do you need",""));
+					
+					//checks if quantity is an integer, if not, it reruns buy function
+					if (Number.isInteger(quantity) == false) {
+						window.alert("I am sorry, but this is not a whole number. click 'ok' to try again.");
+						buy();
+					
+					} else {
+						//outputs the recipt
+						switch (userInput) {
+							case "1":
+								totalBill =  totalBill + (quantity * 1.9);
+								break;
+							case "2":
+								totalBill = totalBill + (quantity * 32);
+								break;
+							case "3": 
+								totalBill = totalBill + (quantity *900);
+								break; 
+						}
+					}
+					document.getElementById("recipt").innerHTML = "Current Item No.: " + userInput + "<br>" + "Quantity: " + (quantity) + "<br>" + "Total cost: $" + (totalBill);
+				} else {
+					window.alert("Sorry, that's not a valid input, please try again.");
+					buy();
+				}
+			}
+		</script>
+	</head>
+	<body>
+	<h1>Rimworld settlement exports</h1>
+		<h2>Catalog</h2>
+		<ol>
+			<li>Steel - $1.9</li>
+			<li>Components - $32</li>
+			<li>Slaves - $900</li>
+		</ol>
+		<button onclick="buy()">Buy item</button>
+		<button onclick="clearAll()">Clear</button>
+		<p id="recipt"></p>
+	</body>
+</html>
